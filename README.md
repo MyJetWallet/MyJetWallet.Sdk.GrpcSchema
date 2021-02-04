@@ -1,4 +1,4 @@
-# MyJetWallet.Sdk.GrpcSchema
+MyJetWallet.Sdk.GrpcMetrics
 
 ## Usage
 
