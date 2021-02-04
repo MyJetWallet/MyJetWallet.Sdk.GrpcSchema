@@ -1,4 +1,4 @@
-MyJetWallet.Sdk.GrpcMetrics
+![Nuget version](https://img.shields.io/nuget/v/MyJetWallet.Sdk.GrpcSchema?label=MyJetWallet.Sdk.GrpcSchema&style=social)
 
 ## Usage
 
