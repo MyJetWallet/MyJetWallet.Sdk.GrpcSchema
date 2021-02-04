@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.0.147" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.147" />
+  </ItemGroup>
+
+</Project>
