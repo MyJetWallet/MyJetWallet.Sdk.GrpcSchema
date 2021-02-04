@@ -12,10 +12,4 @@
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.147" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="bcl.proto">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
