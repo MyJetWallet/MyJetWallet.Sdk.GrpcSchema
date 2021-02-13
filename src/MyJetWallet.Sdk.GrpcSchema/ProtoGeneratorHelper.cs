@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ProtoBuf.Grpc.Reflection;
+// ReSharper disable UnusedMember.Global
 
 namespace MyJetWallet.Sdk.GrpcSchema
 {
@@ -42,6 +43,8 @@ namespace MyJetWallet.Sdk.GrpcSchema
             {
                 await context.Response.WriteAsync(GetBcl());
             });
+
+            endpoints.MapGrpcSchema<GrpcHelperService, IGrpcHelperService>();
         }
 
         private static string GetListOfServices()
