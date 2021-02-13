@@ -1,32 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
+using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Threading.Tasks;
 
 namespace MyJetWallet.Sdk.GrpcSchema
 {
     public class GrpcHelperService : IGrpcHelperService
     {
-        public DateTime StringToDateTime(string str)
+        public Data<DateTime> StringToDateTime(Data<string> str)
         {
-            return DateTime.Parse(str);
+            return new Data<DateTime>(DateTime.Parse(str.Value));
         }
 
-        public string DateTimeToString(DateTime time)
+        public Data<string> DateTimeToString(Data<DateTime> time)
         {
-            return $"{time:O}";
+            return new Data<string>($"{time.Value:O}");
         }
 
-        public decimal StringToDecimal(string str)
+        public Data<decimal> StringToDecimal(Data<string> str)
         {
-            return decimal.Parse(str);
+            return new Data<decimal>(decimal.Parse(str.Value));
         }
 
-        public string DecimalToString(decimal value)
+        public Data<string> DecimalToString(Data<decimal> value)
         {
-            return value.ToString(CultureInfo.InvariantCulture);
+            return new Data<string>(value.Value.ToString(CultureInfo.InvariantCulture));
+        }
+
+        [DataContract]
+        public class Data<T>
+        {
+            public Data()
+            {
+            }
+
+            public Data(T value)
+            {
+                Value = value;
+            }
+
+            [DataMember(Order = 1)] public T Value { get; set; }
         }
     }
 
@@ -34,15 +47,17 @@ namespace MyJetWallet.Sdk.GrpcSchema
     public interface IGrpcHelperService
     {
         [OperationContract]
-        DateTime StringToDateTime(string str);
+        GrpcHelperService.Data<DateTime> StringToDateTime(GrpcHelperService.Data<string> str);
 
         [OperationContract]
-        string DateTimeToString(DateTime time);
+        GrpcHelperService.Data<string> DateTimeToString(GrpcHelperService.Data<DateTime> time);
 
         [OperationContract]
-        decimal StringToDecimal(string str);
+        GrpcHelperService.Data<decimal> StringToDecimal(GrpcHelperService.Data<string> str);
 
         [OperationContract]
-        string DecimalToString(decimal value);
+        GrpcHelperService.Data<string> DecimalToString(GrpcHelperService.Data<decimal> value);
     }
+
+    
 }
