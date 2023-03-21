@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.1.1" />
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.1" />
   </ItemGroup>
 
 </Project>
