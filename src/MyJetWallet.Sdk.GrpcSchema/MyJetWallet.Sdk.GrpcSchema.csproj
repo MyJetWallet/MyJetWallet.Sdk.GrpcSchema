@@ -8,9 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Destructurama.Attributed" Version="3.2.0" />
     <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.1.1" />
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="6.2.0" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
